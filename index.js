@@ -1,6 +1,6 @@
 const fs = require('fs');
 const inquirer = require('inquirer');
-const generateLogo = require('./utils/generateLogo');
+const generateLogo = require('./lib/generateLogo');
 
 // questions for user input
 const questions = [
@@ -26,3 +26,23 @@ const questions = [
         name: 'shape_color',
     },
 ];
+
+function writeToFile(fileName, data) {
+    console.log("Data to be written: ", data);
+    fs.writeFile(fileName, data, function (error) {
+        if (error) {
+            return console.log(error);
+        }
+        console.log("Generated a logo.svg"); 
+    });
+ }
+
+ function init() {
+    inquirer
+    .prompt(questions)
+    .then(function(data) {
+        writeToFile('examples/logo.svg', generateLogo((data)));
+    });
+}
+
+init();
