@@ -8,6 +8,8 @@ Through this project, I learned the intricacies of working with user input in a 
 
 ## Video URL
 
+[SVG Logo Demo Video](https://drive.google.com/file/d/11osW4VmMGNc9hnxfkTsQ3ednBgWF664R/view)
+
 ## Installation
 
 Installed the program using npm init -y and npm i. Run the program using npm index.js and run the tests using npm run test.
